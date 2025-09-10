@@ -8,5 +8,8 @@
 
 Esse projeto é uma **aplicação web** de uma empresa de cinema, 
 
-## 🛠 Tecnologias utilizadas:
-html, css, 
+**Tecnologias utilizadas**:
+html, css ,
+
+## 😱 Demonstração do sistema:
+<img src=""/>
