@@ -4,8 +4,8 @@
   </a>
 </p>
 
-<h2 align="center">Aplicação Web de um Cinema</h2>
+<h2 align="center">Venha ter a melhor experiência de cinema que você já viu.</h2>
 
-Esse projeto
+Alivefilmes é uma **aplicação web** de uma empresa de cinema, 
 
 ## 🛠 Tecnologias utilizadas:
