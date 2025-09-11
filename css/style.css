@@ -1,0 +1,154 @@
+/*
+    importa as fontes:
+    Cal Sans
+    League Spartan
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=League+Spartan:wght@100..900&display=swap');
+:root{
+    --cor-texto:          #fff;
+    --cor-fundo:          #001e62;
+    --cor_texto_sec:      #47a1ff;
+    --cor-enfase:         #004EFF;
+    --cor_enfase_escuro:  #0044e2;
+    --cor_active:         #3cdbff;
+    --cor_selecao:        #19aecf;
+    --cor_selecao_footer: #002963;
+    --cor_borda:          #0848c4;
+    --cor_borda_footer:   #0043db;
+    --cor_btn_trailer:    #ff3c3c;
+
+    --sg_vermelho:        #ff533c;
+    --sg_amarelo:         #d1ff3c;
+    --sg_verde:           #3cff90;
+    --sg_ciano:           #3cdbff;
+    --sg_azul:            #004EFF;
+    --sg_rosa:            #e83cff;
+}
+h1{
+    font-family: 'Cal Sans', Arial, Helvetica, sans-serif;
+}
+input, button{
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+}button{cursor: pointer;}::selection{background-color: var(--cor_selecao);}
+
+
+body{
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+    /*padding-top: 127px;*/
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    background: transparent;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid red;*/
+}
+
+.navbar_parte_cima > ul{
+    /*border: 1px solid blue;*/
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_parte_baixo > ul{
+    padding: 8px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_link_navbar_localizacao{
+    display: flex;
+    align-items: center;
+}
+
+.navbar_parte_cima_direita{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.div_navbar_parte_baixo_links_meio{
+    display: flex;
+    gap: 25px;
+}
+
+.navbar_texto_link{
+    color: var(--cor-texto);
+    font-weight: 400;
+    font-size: 22px;
+}.navbar_texto_link:hover{
+    text-decoration: underline;
+}
+
+.navbar_input_pesquisar{
+    padding: 8px 25px;
+    border-radius: 1.5em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--cor-texto);
+    background: none;
+    outline: none;
+    font-size: 18px;
+}.navbar_input_pesquisar::-webkit-input-placeholder{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar_svg_rede_social{
+    fill: var(--cor-enfase);
+}
+
+
+.secao_1{
+    height: 850px;
+    background: linear-gradient(to bottom, #000, var(--cor-fundo));
+    /*border: 1px solid #f0f;*/
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.slogan_banner, .paragrafo_banner{
+    color: var(--cor-texto);
+    text-align: center;
+    font-size: 80px;
+}
+
+
+.slogan_banner span{
+    background: linear-gradient(to right, var(--sg_vermelho), var(--sg_amarelo), var(--sg_verde), var(--sg_ciano), var(--sg_azul), var(--sg_rosa));
+    background-size: 600% 600%;
+    background-clip: text;
+    color: transparent;
+    animation: 10s slogan_gay linear infinite;
+}
+
+
+.paragrafo_banner{
+    font-size: 30px;
+}
+
+@keyframes slogan_gay {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

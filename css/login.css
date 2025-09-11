@@ -1,0 +1,177 @@
+body{
+    background: #000;
+    
+    /* talvez temporário, se eu descobrir como contornar essa situaçao no registro.php */
+    overflow-y: hidden;
+}
+
+.secao_tudo_login{
+    position: relative;
+
+    /*border: 1px solid red;*/
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+/*.teste{
+    position: relative;
+
+    border: 1px solid #f0f;
+    display: flex;
+    width: 100%;
+}*/
+
+.div_login_img_fundo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url(../images/fundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img_login_fundo{
+    min-width: 100%;
+    height: 100%;
+}
+
+.img_login_logo{
+    max-width: 100%;
+}
+
+.div_img_login_logo{
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.login_esquerda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    width: 50%;
+}
+.login_direita{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background: linear-gradient(to bottom, var(--sg_ciano), var(--cor-enfase));
+    transition: .3s;
+}
+
+.login_direita_parte_cima{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92%;
+}
+
+.login_direita_parte_baixo{
+    height: 8%;
+}
+
+.login_container{
+    /* esse position e z-index é SUPER IMPORTANTE senao NAO DA PRA CLICAR NO FORMULARIO, pq essa PORRA de imagem no fundo quer se aparecer e ficar no topo do z-index, nao deixando a gente clicar em nada  */
+    position: relative;
+    z-index: 1;
+    /*border: 1px solid #0f0;*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    margin: 0 20px;
+}
+
+.div_form_login{
+    display: flex;
+    justify-content: center;
+}
+
+.form_login{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1em;
+}
+.form_login > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_login label{
+    color: var(--cor-texto);
+    font-size: 28px;
+}
+.form_login input{
+    border-radius: .4em;
+    color: rgba(255, 255, 255, .8);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, .1);
+    outline: none;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 12px 17px;
+}
+
+.titulo_texto_login{
+    color: var(--cor-texto);
+    font-size: 70px;
+    text-align: center;
+    transition: .3s;
+}
+
+.nao_tenho_conta_login{
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--cor-texto);
+    text-align: center;
+}
+.nao_tenho_conta_login > a{
+    color: var(--cor_active);
+}.nao_tenho_conta_login > a:hover{
+    text-decoration: underline;
+}
+
+
+.login_direita_parte_baixo{
+    position: relative;
+    z-index: 1;
+
+    border-top: 3px solid var(--cor_borda);
+    margin: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+    color: var(--cor_texto_sec);
+    text-align: center;
+    transition: .3s;
+
+    > p > a{
+        color: var(--cor_texto_sec);
+    }
+}
+
+.botao_login_e_cadastro{
+    color: var(--cor-texto);
+    font-weight: 600;
+    font-size: 24px;
+    padding: 15px;
+    background: var(--cor-enfase);
+    border: none;
+    outline: none;
+    border-radius: .4em;
+}.botao_login_e_cadastro:hover{
+    background: var(--cor_enfase_escuro);
+}
