@@ -1,5 +1,4 @@
-# ⚠ esse projeto está em DESENVOLVIMENTO!
-prossiga com sua conta e risco
+# ⚠ esse projeto está em DESENVOLVIMENTO! prossiga por sua conta e risco
 
 
 <p align="center">
