@@ -4,7 +4,7 @@ prossiga com sua conta e risco
 
 <p align="center">
   <a href="https://github.com/pondianxz/Alive-Filmes-web">
-    <img src="logo.png" width="300"/>
+    <img src="DESIGN/logo.png" width="300"/>
   </a>
 </p>
 
