@@ -4,7 +4,7 @@ const navbar_parte_cima = document.getElementById('navbar_parte_cima');
 window.addEventListener("scroll", () => {
     //console.log(scrollY)
 
-    if(scrollY > 800){
+    if(scrollY > 700){
         navbar.style.background = "rgba(0, 0, 0, 0.3)";
     }else{
         navbar.style.background = "transparent";
