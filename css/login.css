@@ -120,6 +120,10 @@ body{
     font-size: 24px;
     font-weight: 300;
     padding: 12px 17px;
+    transition: .3s;
+}
+.form_login input:focus{
+    background: rgba(0, 0, 0, .18);
 }
 
 .titulo_texto_login{

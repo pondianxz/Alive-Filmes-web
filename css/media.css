@@ -2,7 +2,73 @@
         INDEX
     ====================================================================
 */
+@media (max-width: 850px) {
+    /* tira os icone social na navbar*/
+    .navbar_div_sociais{
+        display: none;
+    }
 
+    /* tira a barra de pesquisa da navbar */
+    .div_navbar_input_pesquisar{
+        display: none;
+    }
+
+    /* coloca so o icone de pesquisa na navbar */
+    .div_navbar_botao_pesquisar{
+        display: flex;
+    }
+}
+
+@media (max-width: 800px) {
+    /* deixa as infos dos filmes em flex-direction column */
+    .info_sessao, .div_botoes_horarios_sessao, .escolher_data_sessao, .botoes_escolher_data{
+        flex-direction: column;
+    }
+    .btn_escolher_data_sessao{
+        width: 100%;
+    }
+    .div_capa_filme{
+        width: 100%;
+        max-height: 870px;
+    }
+    .img_capa_filme{
+        width: 80%;
+    }
+
+    /* muda o tamanho do texto paragrafo no banner */
+    .div_paragrafo_banner{
+        width: 70%;
+    }
+
+    .img_logo_rodape{
+        width: 200px;
+    }
+}
+
+@media (max-width: 750px) {
+    /* aparece o botao de menu */
+    .li_navbar_botao_menu{
+        display: flex;
+    }
+
+    /* faz sumir todos os links da navbar, exceto o de menu e login */
+    .navbar_parte_baixo > ul > :not(:first-child):not(:last-child){
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .slogan_banner{
+        font-size: 50px;
+    }
+    .paragrafo_banner{
+        font-size: 20px;
+    }
+
+    .div_tudo_rodape{
+        padding: 40px;
+    }
+}
 
 
 
@@ -10,16 +76,16 @@
 
 
 /*  ==================================================================== 
-        PAGINA DE LOGIN
+        LOGIN
     ====================================================================
 */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) { /* diminui o tamanho do titulo */
     .titulo_texto_login{
         font-size: 55px;
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 760px) { /* tira a parte da esquerda e deixa so a parte do degrade */
     .login_esquerda{
         display: none;
     }
@@ -29,7 +95,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* diminui o tamanho dos links pequenos de termos de uso, quem somos, etc */
     .login_direita_parte_baixo{
         font-size: 12px;
     }

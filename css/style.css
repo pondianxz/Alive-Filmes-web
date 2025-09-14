@@ -32,14 +32,17 @@ input, button{
 }
 a{
     text-decoration: none;
-}button{cursor: pointer;}::selection{background-color: var(--cor_selecao);}
+}
+button{
+    cursor: pointer;
+}
+::selection{background-color: var(--cor_selecao);}
 
 
 body{
     font-family: 'League Spartan', Arial, Helvetica, sans-serif;
     height: 100vh;
     overflow-x: hidden;
-    /*padding-top: 127px;*/
 }
 
 .navbar{
@@ -50,7 +53,7 @@ body{
 
     background: transparent;
     backdrop-filter: blur(7px);
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, .5);
     display: flex;
     flex-direction: column;
     transition: .3s;
@@ -92,12 +95,64 @@ body{
     gap: 25px;
 }
 
+.div_navbar_parte_baixo_links_fim{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn_navbar_logout{
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+}
+
 .navbar_texto_link{
     color: var(--cor-texto);
     font-weight: 400;
     font-size: 22px;
 }.navbar_texto_link:hover{
     text-decoration: underline;
+}
+
+.div_navbar_input_pesquisar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > svg{
+        fill: rgba(255, 255, 255, 0.3);
+        transform: translateX(-40px);
+    }
+}
+
+.div_navbar_botao_pesquisar{
+    display: none;
+}
+
+.btn_pesquisar_navbar, .btn_menu_navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: none;
+    border: none;
+    outline: none;
+
+    > svg {
+        fill: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.li_navbar_botao_menu{
+    display: none;
+}
+
+.btn_menu_navbar{
+    > svg{
+        fill: var(--cor-texto);
+    }
 }
 
 .navbar_input_pesquisar{
@@ -112,8 +167,14 @@ body{
     color: rgba(255, 255, 255, 0.3);
 }
 
+
+.navbar_div_sociais{
+    display: flex;
+    gap: 5px;
+}
+
 .navbar_svg_rede_social{
-    fill: var(--cor-enfase);
+    fill: var(--cor_active);
 }
 
 
@@ -123,19 +184,25 @@ body{
     /*border: 1px solid #f0f;*/
 }
 
-.container{
+.container, .textos_banner{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
     align-items: center;
+}
+
+.textos_banner{
+    margin: 0 20px;
+    height: fit-content;
+    gap: 10px;
 }
 
 .slogan_banner, .paragrafo_banner{
     color: var(--cor-texto);
     text-align: center;
     font-size: 80px;
+    transition: .3s;
 }
 
 
@@ -146,7 +213,6 @@ body{
     color: transparent;
     animation: 10s slogan_gay linear infinite;
 }
-
 
 .paragrafo_banner{
     font-size: 30px;

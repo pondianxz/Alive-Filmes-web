@@ -1,5 +1,9 @@
 .rodape{
     background: var(--cor-enfase);
+    a:hover{
+        color: var(--cor-texto);
+        text-decoration: underline;
+    }
 }
 
 /*
@@ -16,19 +20,15 @@
     flex-direction: column;
     gap: 2em;
     padding: 80px;
+    transition: .3s;
     ::selection{background-color: var(--cor_selecao_footer);}
 }
 
 .rodape_parte_cima{
+    /*border: 1px solid blue;*/
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
-    /*  ESCREVER ESSE CODIGO COM @media DEPOIS
-    .rodape_parte_cima_container3{
-        flex-grow: 1;
-
-    }*/
 }
 
 .div_rodape_logo{
@@ -36,10 +36,15 @@
     padding: 10px;
 }
 
+.img_logo_rodape{
+    width: 400px;
+}
+
 .rodape_parte_cima_container{
     display: flex;
     flex-direction: column;
     gap: .4em;
+    margin: 20px;
 
     h2,p{
         color: var(--cor-texto);
@@ -61,10 +66,6 @@
 
 .rodape_parte_cima_container1{
     gap: 2em;
-}
-
-.rodape_parte_cima_container2, .rodape_parte_cima_container3{
-    padding: 0 80px;
 }
 
 .rodape_redes_sociais{

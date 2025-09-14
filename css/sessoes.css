@@ -3,9 +3,6 @@
     flex-direction: column;
     /*border: 1px solid red;*/
 
-    /* TEMPORÁRIO */
-    height: 2000px; 
-
     background: var(--cor-fundo);
     padding: 80px;
     gap: 20px;
@@ -52,6 +49,7 @@
 
 .escolher_data_sessao{
     display: flex;
+    align-items: center;
     gap: 7px;
     justify-content: space-between;
 }
@@ -105,10 +103,23 @@
 }
 
 .btn_seta_escolher_data, .btn_escolher_data_especifica_sessao{
-    background: none;
-    outline: none;
+    background: var(--cor_active);
+    border: none;
     width: 50px;
-    height: 100%;
+    height: 50px;
+    border-radius: .3em;
+    transition: .3s;
+
+    svg{
+        fill: var(--cor-enfase);
+    }
+}
+.btn_seta_escolher_data:hover, .btn_escolher_data_especifica_sessao:hover{
+    background: var(--cor-enfase);
+
+    svg{
+        fill: var(--cor_active);
+    }
 }
 
 .filmes_em_alta{
@@ -128,12 +139,30 @@
 .info_sessao{
     /*border: 1px solid red;*/
     display: flex;
+    flex-direction: row;
     gap: 2em;
 }
 
 .div_capa_filme{
     width: 20%;
-    border: 1px solid yellow;
+    transition: .3s;
+    /*border: 1px solid yellow;*/
+}
+
+.div_link_filme_sessao{
+    width: fit-content;
+    a{
+        color: var(--cor-texto);
+        :hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.div_botoes_horarios_sessao{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .div_conteudo_info_filme{
@@ -231,4 +260,8 @@
     display: flex;
     flex-direction: column;
     gap: .3em;
+}
+
+.img_capa_filme{
+    width: 100%;
 }
