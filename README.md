@@ -1,15 +1,12 @@
-# ⚠ esse projeto está em DESENVOLVIMENTO! prossiga por sua conta e risco
-
-
 <p align="center">
   <a href="https://github.com/pondianxz/Alive-Filmes-web">
     <img src="DESIGN/logo.png" width="300"/>
   </a>
 </p>
 
-<p align="center">
+<h3 align="center">
   <strong>Venha ter a melhor experiência de cinema que você já viu.</strong>
-</p>
+</h3>
 <hr>
 
 Esse projeto é uma **aplicação web** de uma empresa de cinema, onde você poderá comprar ingressos para o seu filme favorito, e assisti-lo em um Alive Filmes próximo de sua casa.

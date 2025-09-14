@@ -1,13 +1,17 @@
+<?php
+session_start();
+require "Controller/conexao.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Alive Filmes</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/reset.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/login.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/media.css?<?php echo time(); ?>">
 </head>
 <body>
     <section class="secao_tudo_login">
@@ -29,7 +33,7 @@
                     <h1 class="titulo_texto_login">Bem-vindo de volta.</h1>
 
                     <div class="div_form_login">
-                        <form action="" method="post" class="form_login">
+                        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="form_login">
                             <div class="div_form_login_email">
                                 <label for="email">E-mail</label>
                                 <input type="email" name="email" id="">
