@@ -9,7 +9,7 @@
 </h3>
 <hr>
 
-Esse projeto é uma **aplicação web** de uma empresa de cinema, onde você poderá comprar ingressos para o seu filme favorito, e assisti-lo em um Alive Filmes próximo de sua casa.
+Esse projeto é uma **aplicação web** de uma empresa de cinema, onde você poderá comprar ingressos para o seu filme favorito, e assisti-lo em um Alive Filmes próximo de sua casa. Atualmente esse projeto está em fase *beta*, com novas funcionalidades sendo adicionadas constantemente.
 
 ### 🛠 Tecnologias utilizadas:
 
@@ -21,11 +21,11 @@ Esse projeto é uma **aplicação web** de uma empresa de cinema, onde você pod
 
 <br>
 
-### ⚙ Como usar
+### ⚙ como usar
 Para usar esse programa voce precisa:
 - ter o XAMPP instalado, para o servidor e phpmyadmin
 - Após baixar, copie a pasta e cole em ```C:\xampp\htdocs\```.
-- Inicie o servidor XAMPP
+- no XAMPP, inicie o Apache e MySQL
 - Divirta-se!
 
 <br>
