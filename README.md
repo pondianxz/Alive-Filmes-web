@@ -1,6 +1,3 @@
-# ⚠ esse projeto está em DESENVOLVIMENTO! prossiga por sua conta e risco
-
-
 <p align="center">
   <a href="https://github.com/pondianxz/Alive-Filmes-web">
     <img src="DESIGN/logo.png" width="300"/>
