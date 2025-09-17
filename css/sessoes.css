@@ -1,267 +1,31 @@
-.secao_2{
-    display: flex;
-    flex-direction: column;
-    /*border: 1px solid red;*/
-
+body{
+    /* para consertar a bugadona q o position:fixed na navbar faz */
+    padding-top: 134px;
+}
+.navbar, body{
     background: var(--cor-fundo);
-    padding: 80px;
-    gap: 20px;
 }
 
-.secao_2_categorias{
+.secao_sessao_1{
+    background: var(--cor_fundo_escuro);
+    /*border: 1px solid red;*/
+    padding: 3em 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    /*border: 1px solid yellow;*/
-}
-
-.div_sessoes{
-    display: flex;
-    flex-direction: column;
-    gap: 10em;
-}
-
-.div_titulo_categoria_sessao{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .linha_selecao_categoria_sessao{
-        width: 0%;
-        border-top: 2px solid var(--cor-texto);
-        transition: .3s;
-    }
- }.div_titulo_categoria_sessao:hover{
-    .linha_selecao_categoria_sessao{
-        width: 105%;
-    }
-} .div_titulo_categoria_sessao:active{
-    .titulo_categoria_sessao{
-        color: var(--cor_active);
-    }
-}
-
-.titulo_categoria_sessao{
-    color: var(--cor-texto);
-    font-size: 32px;
-    font-weight: 400;
-}
-
-.escolher_data_sessao{
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    justify-content: space-between;
-}
-
-.btn_escolher_data_sessao, .btn_horario_sessao, .btn_trailer_filme{
-    height: 50px;
-    padding: 12px;
-    font-size: 18px;
-    border: none;
-    border-radius: .3em;
-    outline: none;
-}
-
-.botoes_escolher_data{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.btn_horario_sessao{
-    min-width: 8%;
-    color: var(--cor-texto);
-    background: var(--cor-enfase);
-    font-size: 20px;
-    transition: .2s;
-}.btn_horario_sessao:hover{
-    background: var(--cor_enfase_escuro);
-}
-
-.btn_trailer_filme{
-    display: flex;
-    padding: 0 15px;
-    gap: 4px;
-    justify-content: center;
-
-    svg{
-        fill: #000;
-    }
-    transition: .3s;
-}
-.btn_trailer_filme:hover{
-    background: var(--cor_btn_trailer);
-}
-
-.btn_escolher_data_sessao{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 10%;
-}
-
-.btn_seta_escolher_data, .btn_escolher_data_especifica_sessao{
-    background: var(--cor_active);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: .3em;
-    transition: .3s;
-
-    svg{
-        fill: var(--cor-enfase);
-    }
-}
-.btn_seta_escolher_data:hover, .btn_escolher_data_especifica_sessao:hover{
-    background: var(--cor-enfase);
-
-    svg{
-        fill: var(--cor_active);
-    }
-}
-
-.filmes_em_alta{
-    display: flex;
-    gap: 5px;
     align-items: center;
 }
-
-.titulo_popularidade_filme{
-    color: var(--cor-texto);
-    font-size: 28px;
-    font-weight: 600;
-}
-
-
 
 .info_sessao{
-    /*border: 1px solid red;*/
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-}
-
-.div_capa_filme{
-    width: 20%;
-    transition: .3s;
     /*border: 1px solid yellow;*/
+    padding: 0 2em;
 }
 
-.div_link_filme_sessao{
-    width: fit-content;
-    a{
-        color: var(--cor-texto);
-        :hover{
-            text-decoration: underline;
-        }
-    }
-}
+.div_sinopse_filme{
+    /*border: 1px solid blue;*/
+    width: 60%;
 
-.div_botoes_horarios_sessao{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.div_conteudo_info_filme{
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    width: 80%;
-    /*border: 1px solid yellow;*/
-}
-/*
-.div_conteudo_info_filme > div{
-    border: 1px solid cyan;
-}*/
-
-.div_conteudo_parte1_info_filme{
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    /*border: 1px solid #0f0;*/
-}
-
-.descricao_filme{
-    display: flex;
-    align-items: center;
-    gap: 1em;
-
-    h2{
-        color: var(--cor-texto);
+    >p{
         font-size: 20px;
+        color: var(--cor_active);
     }
-}
-
-.div_conteudo_parte2_info_filme{
-    /*border: 1px solid #0f0;*/
-    display: flex;
-    flex-direction: column;
-    gap: 2.2em;
-    padding: 30px 0;
-    border-top:    1px solid var(--cor_borda);
-    border-bottom: 1px solid var(--cor_borda);
-
-    h2, h3{
-        color: var(--cor-texto);
-        font-size: 30px;
-        font-weight:600;
-    }
-
-    h3 {
-        font-size: 24px;
-    }
-}
-
-
-
-.classificacao_indicativa_filme{
-    border-radius: .2em;
-    padding: 3px 7px;}
-
-
-#classificacao_indicativa_l_anos_filme  { background: #4dac3c }
-#classificacao_indicativa_10_anos_filme { background: #3c7fac }
-#classificacao_indicativa_12_anos_filme { background: #9e9a31 }
-#classificacao_indicativa_14_anos_filme { background: #ac5a3c }
-#classificacao_indicativa_16_anos_filme { background: #ac3c3c }
-#classificacao_indicativa_18_anos_filme { background: #000000 }
-
-
-
-.titulo_filme_info_filme{
-    color: var(--cor-texto);
-    font-size: 44px;
-}
-
-.outras_infos_filme{
-    color: var(--cor-texto);
-    font-size: 20px;
-
-    span{
-        font-weight: 600;
-    };
-}
-
-.btn_trailer_filme{
-    display: flex; 
-    align-items: center;
-}
-
-
-/* ISSO AQUI MUDA COM JAVASCRIPT, SE O FILME TIVER UMA TAG */
-.tags_filme{
-    display: none;
-}
-
-.div_sala_e_tipo_audio_filme{
-    display: flex;
-    flex-direction: column;
-    gap: .3em;
-}
-
-.img_capa_filme{
-    width: 100%;
 }
