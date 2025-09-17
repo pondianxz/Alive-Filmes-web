@@ -7,6 +7,7 @@ require "Controller/conexao.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Criar Conta - Alive Filmes</title>
     <link rel="stylesheet" href="css/reset.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
@@ -119,21 +120,22 @@ require "Controller/conexao.php";
                 cep_cliente = '$cep',
                 bairro_cliente = '$bairro',
                 cidade_cliente = '$cidade',
-                estado_cliente = '$estado'
-                WHERE id_cliente = '$id_cliente';
-            ";
+                estado_cliente = '$estado',
+                pais_cliente = 'Brasil',
+                WHERE id_cliente = '$id_cliente';";
             mysqli_query($conexao, $sql);
 
             // define as sessões
-            $_SESSION['cep'] = $cep;
-            $_SESSION['endereco'] = $endereco;
-            $_SESSION['bairro'] = $bairro;
-            $_SESSION['cidade'] = $cidade;
-            $_SESSION['estado'] = $estado;
+            $_SESSION['cep_cliente']      = $cep;
+            $_SESSION['endereco_cliente'] = $endereco;
+            $_SESSION['bairro_cliente']   = $bairro;
+            $_SESSION['cidade_cliente']   = $cidade;
+            $_SESSION['estado_cliente']   = $estado;
 
             // redireciona o usuario para a pagina index
             header("Location: index.php");
-
+            exit();
+            
         } 
         catch (mysqli_sql_exception){
             echo'

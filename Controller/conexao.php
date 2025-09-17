@@ -9,7 +9,7 @@ try{
     $conexao = mysqli_connect($bd_servidor, $bd_user, $bd_senha, $bd_nome);
 }catch(mysqli_sql_exception){
     echo'
-    <h1 style="color: red; font-size: 80px; transform: translateY(100px); text-align: center;">Não foi possível conectar ao servidor</h1>
+    <h1 style="color: red; font-size: 80px; transform: translateY(230px); text-align: center;">Não foi possível conectar ao banco de dados</h1>
     ';
 }
 

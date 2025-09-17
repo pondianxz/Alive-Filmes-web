@@ -1,0 +1,20 @@
+body{
+    /* para consertar a bugadona q o position:fixed na navbar faz */
+    padding-top: 134px;
+}
+.navbar, body{
+    background: var(--cor-fundo);
+}
+
+.secao_contato_1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

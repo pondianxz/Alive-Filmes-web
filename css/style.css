@@ -7,6 +7,7 @@
 :root{
     --cor-texto:          #fff;
     --cor-fundo:          #001e62;
+    --cor_fundo_escuro:   #001954;
     --cor_texto_sec:      #47a1ff;
     --cor-enfase:         #004EFF;
     --cor_enfase_escuro:  #0044e2;
@@ -26,17 +27,18 @@
 }
 h1{
     font-family: 'Cal Sans', Arial, Helvetica, sans-serif;
-}
-input, button{
+}input, button, textarea{
+    outline: none;
     font-family: 'League Spartan', Arial, Helvetica, sans-serif;
-}
-a{
+}a{
     text-decoration: none;
-}
-button{
+}button{
     cursor: pointer;
+}textarea{
+    resize: none;
+}::selection{
+    background-color: var(--cor_selecao);
 }
-::selection{background-color: var(--cor_selecao);}
 
 
 body{
@@ -138,7 +140,6 @@ body{
     
     background: none;
     border: none;
-    outline: none;
 
     > svg {
         fill: rgba(255, 255, 255, 0.3);
@@ -161,7 +162,6 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: var(--cor-texto);
     background: none;
-    outline: none;
     font-size: 18px;
 }.navbar_input_pesquisar::-webkit-input-placeholder{
     color: rgba(255, 255, 255, 0.3);
