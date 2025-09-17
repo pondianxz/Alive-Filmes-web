@@ -1,12 +1,13 @@
 <?php 
-session_start();
-require "Controller/conexao.php";
+    session_start();
+    require "Controller/conexao.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Criar Conta - Alive Filmes</title>
     <link rel="stylesheet" href="css/reset.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
@@ -98,10 +99,11 @@ require "Controller/conexao.php";
 </body>
 </html>
 <?php
-    $nome            = $_POST['nome'];
-    $email           = $_POST['email'];
-    $senha           = $_POST['senha'];
-    $confirmar_senha = $_POST['confirmar_senha'];
+
+    $nome            = mysqli_real_escape_string($conexao, $_POST['nome']);
+    $email           = mysqli_real_escape_string($conexao, $_POST['email']);
+    $senha           = mysqli_real_escape_string($conexao, $_POST['senha']);
+    $confirmar_senha = mysqli_real_escape_string($conexao, $_POST['confirmar_senha']);
     
     // se o usuario clicou no botao de cadastrar
     if(isset($_POST['botao_cadastro'])){
@@ -152,11 +154,13 @@ require "Controller/conexao.php";
 
 
                 // secoes para dizer que o cliente esta logado
-                $_SESSION['cliente']    = $nome_uppercase;
-                $_SESSION['email']      = $email;
-                $_SESSION['id_cliente'] = $id_cliente;
+                $_SESSION['logado']        = 1;
+                $_SESSION['nome_cliente']  = $nome_uppercase;
+                $_SESSION['email_cliente'] = $email;
+                $_SESSION['id_cliente']    = $id_cliente;
                 header("Location: registro2.php"); // redireciona o usuario para o 2o passo do registro
-
+                exit();
+                
             } catch(mysqli_sql_exception) {
                 echo'
                 <h1>Erro ao registrar usuario</h1>
