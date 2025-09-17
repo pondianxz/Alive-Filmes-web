@@ -22,10 +22,12 @@ Esse projeto é uma **aplicação web** de uma empresa de cinema, onde você pod
 <br>
 
 ### ⚙ como usar
-Para usar esse programa voce precisa:
-- ter o XAMPP instalado, para o servidor e phpmyadmin
-- Após baixar, copie a pasta e cole em ```C:\xampp\htdocs\```.
-- no XAMPP, inicie o Apache e MySQL
+Para usar esse programa você precisa:
+- Ter o XAMPP instalado, para o servidor e phpmyadmin
+- Após baixar, copie a pasta e cole em ```C:\xampp\htdocs\```
+- No XAMPP, inicie o Apache e MySQL
+- Entre no phpmyadmin
+- Copie o código do arquivo ```bdalivefilmes.sql``` e cole na parte "SQL"
 - Divirta-se!
 
 <br>
