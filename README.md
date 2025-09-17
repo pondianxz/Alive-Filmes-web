@@ -4,10 +4,10 @@
   </a>
 </p>
 
-<h3 align="center">
+<h2 align="center">
   <strong>Venha ter a melhor experiência de cinema que você já viu.</strong>
-</h3>
-<hr>
+</h2>
+<br>
 
 Esse projeto é uma **aplicação web** de uma empresa de cinema, onde você poderá comprar ingressos para o seu filme favorito, e assisti-lo em um Alive Filmes próximo de sua casa. Atualmente esse projeto está em fase *beta*, com novas funcionalidades sendo adicionadas constantemente.
 
