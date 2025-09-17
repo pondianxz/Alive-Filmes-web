@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/pondianxz/Alive-Filmes-web">
-    <img src="DESIGN/logo.png" width="300"/>
+    <img src="DESIGN/logo.png" width="380"/>
   </a>
 </p>
 
