@@ -38,13 +38,6 @@
     .linha_selecao_categoria_sessao{
         width: 105%;
     }
-} .div_titulo_categoria_sessao:active{
-    .linha_selecao_categoria_sessao{
-        border-color: var(--cor_active);
-    }
-    .titulo_categoria_sessao{
-        color: var(--cor_active);
-    }
 }
 
 .titulo_categoria_sessao{
@@ -63,7 +56,6 @@
 .btn_escolher_data_sessao{
     color: var(--cor-texto);
     background: rgba(0, 0, 0, 0.3);
-    box-shadow: 4px 4px 7px 0 rgba(0, 0, 0, 0.18);
 }
 
 .btn_escolher_data_sessao, .btn_horario_sessao, .btn_trailer_filme{
@@ -76,7 +68,9 @@
 }
 
 .botoes_escolher_data{
+    /*background: red;*/
     width: 100%;
+    padding: 10px;
     display: flex;
     align-items: center;
     gap: 7px;
@@ -115,7 +109,7 @@
 }
 
 .btn_seta_escolher_data, .btn_escolher_data_especifica_sessao{
-    background: var(--cor_active);
+    background: var(--cor-enfase);
     border: none;
     width: 50px;
     height: 50px;
@@ -123,15 +117,12 @@
     transition: .3s;
 
     svg{
-        fill: var(--cor-enfase);
+        fill: var(--cor-texto);
+        transition: .3s;
     }
 }
 .btn_seta_escolher_data:hover, .btn_escolher_data_especifica_sessao:hover{
-    background: var(--cor-enfase);
-
-    svg{
-        fill: var(--cor_active);
-    }
+    background: var(--cor_enfase_escuro);
 }
 
 .filmes_em_alta{
@@ -227,12 +218,9 @@
     }
 }
 
-
-
 .classificacao_indicativa_filme{
     border-radius: .2em;
     padding: 3px 7px;}
-
 
 #classificacao_indicativa_0_anos_filme  { background: #4dac3c }
 #classificacao_indicativa_10_anos_filme { background: #3c7fac }
