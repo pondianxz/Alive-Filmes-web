@@ -14,9 +14,55 @@
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="css/sessoesHome.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="css/footer.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/interacoes.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="css/media.css?<?php echo time(); ?>">
 </head>
 <body>
+    <div id="INTERACOES">
+        <div id="INT_div_div_ver_trailer">
+            <div class="INT_fundo_escuro"></div>
+
+                <div class="INT_ver_trailer">
+
+                    <div class="INT_div_ver_trailer">
+                        <button class="INT_btn_fechar_video" id="INT_btn_fechar_video" onclick="fecharTrailer()">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="34px" viewBox="0 -960 960 960" width="34px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                        </button>
+                        <div class="INT_div_video_trailer" id="INT_div_video_trailer">
+                            <iframe src="
+                            <?php 
+                                if(isset($_POST["btn_trailer_filme"])){
+                                    try{
+                                        $sql = 'SELECT link_trailer FROM tb_filme WHERE id_filme = 1';
+                                        $resultadoSql = mysqli_query($conexao, $sql);
+                                        $link_trailer = mysqli_fetch_assoc($resultadoSql);
+                                        $link_trailer_real = $link_trailer["link_trailer"];
+                                        echo $link_trailer_real;
+                                        echo ' " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+                                        echo '<script>
+                                                INTERACOES.style.display = "flex";
+                                                INT_div_div_ver_trailer.style.display = "flex";
+                                                INT_div_video_trailer.style.display = "flex";
+                                            </script>';
+                                    } catch(mysqli_sql_exception) {
+                                        echo'N/A';
+                                    }
+                                } else if(!isset($_POST["btn_trailer_filme"])) {
+                                    echo'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+                                    echo '<script>
+                                        INTERACOES.style.display = "none";
+                                        INT_div_div_ver_trailer.style.display = "none";
+                                        INT_div_video_trailer.style.display = "none";
+                                    </script>';
+                                }
+                            ?>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    </div>
     <header>
         <nav class="navbar" id="navbar">
             <div class="navbar_parte_cima" id="navbar_parte_cima">
@@ -244,14 +290,11 @@
             <!-- DIV SESSÃO MASTER -->
             <div class="info_sessao">
                 <div class="div_capa_filme">
-                    <a href="
-                        <?php
-                        if(!isset($_SESSION['email_cliente']) || !isset($_SESSION['logado'])){ 
-                            echo"login.php";
-                        }else{
-                            echo"sessoes/sessoesFilme1.php";
-                        }
-                        ?>
+                    <a href="<?php 
+                        if(!isset($_SESSION['email_cliente']) || !isset($_SESSION['logado'])){ echo"login.php"; }
+                        else {
+                            echo "sessoes/sessoesFilme1.php";
+                        }?>
                     ">
                         <!-- Imagem capa Filme-->
                         <img class="img_capa_filme" src="images/capasFilmes/1.webp" alt="Capa Filme">
@@ -260,7 +303,12 @@
                 <div class="div_conteudo_info_filme">
                     <div class="div_conteudo_parte1_info_filme">
                         <div class="div_link_filme_sessao">
-                            <a href="sessoes/sessoesFilme1.php">
+                            <a href="<?php 
+                                if(!isset($_SESSION['email_cliente']) || !isset($_SESSION['logado'])){ echo"login.php"; }
+                                else {
+                                    echo "sessoes/sessoesFilme1.php";
+                                }?>
+                            ">
                                 <!-- Nome filme-->
                                 <h1 class="titulo_filme_info_filme"><?php
                                     try {
@@ -372,15 +420,6 @@
                             ?></p>
 
 
-                            <!-- Script para tirar a ultima virgula das informações caso haja uma extra -->
-                            <script>
-                                const infosFilme = document.querySelectorAll('.infosFilme');
-                                infosFilme.forEach((el) => {
-                                    el.textContent = el.textContent.slice(0, el.textContent.lastIndexOf(", "));
-                                })
-                            </script>
-
-
                             <p class="infosFilme"><span>Distribuidora: </span><?php
                                 try {
                                     $sql = 'SELECT nome_distribuidora FROM tb_distribuidora_filme WHERE id_filme = 1';
@@ -403,12 +442,20 @@
                             ?></p>
                         </div>
 
+                    
+
+
+
+
+
                         <!-- Assistir trailer do filme (se tiver) -->
                         <div class="div_botao_trailer_filme">
-                            <button class="btn_trailer_filme"  title="Assista ao trailer">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F3F3"><path d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                                TRAILER
-                            </button>
+                            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+                                <button type="submit" name="btn_trailer_filme" class="btn_trailer_filme" id="btn_trailer_filme" title="Assista ao trailer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F3F3F3"><path d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                                    TRAILER
+                                </button>
+                            </form>
                         </div>
                     </div>
 
@@ -640,6 +687,20 @@
     <div class="rodape_final">
         <p>&copy; Copyright AliveFilmes 2025. Todos os direitos reservados</p>
     </div>
+
+
+
+    
+    <!-- Script para tirar a ultima virgula das informações dos filmes caso haja uma no final -->
+    <script>
+        const infosFilme = document.querySelectorAll('.infosFilme');
+
+        infosFilme.forEach((el) => {
+            if(el.textContent.endsWith(", ")){
+                el.textContent = el.textContent.slice(0, el.textContent.lastIndexOf(", "));
+            }
+        })
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

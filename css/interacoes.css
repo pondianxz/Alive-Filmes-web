@@ -1,0 +1,75 @@
+#INTERACOES{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    /*border: 1px solid red;*/
+}
+
+#INT_div_div_ver_trailer{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid #0f0;*/
+}
+
+.INT_fundo_escuro{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.95));
+}
+
+.INT_div_ver_trailer{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /*border: 1px solid orange;*/
+}
+
+.INT_ver_trailer{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid blue;*/
+}
+
+.INT_btn_fechar_video{
+    background: none;
+    border: none;
+    svg{
+        transition: .3s;
+        fill: var(--cor-texto);
+    }
+}.INT_btn_fechar_video:hover{
+    svg{
+        fill: var(--cor-enfase);
+    }
+}
+
+.INT_div_video_trailer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid #f0f;*/
+    > iframe{
+        width: 80%;
+        height: 90%;
+        /*border: 1px solid #60f;*/
+    }
+}
