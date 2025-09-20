@@ -1,13 +1,9 @@
-DROP DATABASE IF EXISTS bdalivefilmes;
-CREATE DATABASE bdalivefilmes;
-USE bdalivefilmes;
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/09/2025 às 20:36
+-- Tempo de geração: 20/09/2025 às 02:19
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -110,20 +106,7 @@ CREATE TABLE `tb_cliente` (
 --
 -- Despejando dados para a tabela `tb_cliente`
 --
-/*
-INSERT INTO `tb_cliente` (`id_cliente`, `nome_cliente`, `cpf_cliente`, `senha_cliente`, `data_nasc_cliente`, `logradouro_cliente`, `complemento_cliente`, `cep_cliente`, `bairro_cliente`, `cidade_cliente`, `estado_cliente`, `pais_cliente`, `data_criacao_conta_cliente`) VALUES
-(1, 'PEDRO MANGA DA SILVA', NULL, '$2y$10$6ZU7fLo95rR.QOI42w/nzeoXFNmzy6hu.8uMRTZgQ0UOV6o9FzNsu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'JOAO VICTOR SANTOS', NULL, '$2y$10$yrHdZFyzMXSufa7XQ.f7/ucmN.QADjaff9Z/8Y6juuyZCeNC.90au', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'BEATRIZ MANGA DA SANTOS', NULL, '$2y$10$rijIE1jV7nH4Mh7rxgJQxObM7IOleyAYkdtr18UHywq4ajfI.apwC', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'RONALDO', NULL, '$2y$10$LmduKWgE3rUsKTo5WPCbcO.Qb10Y.Y2I.cIUiDK5OAb41eeu7Oaqa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'MONOCELHA DA SILVA', NULL, '$2y$10$f2Pl5AzjPUO7xtxSMar.GupWYjTxV1edW94IVMStzJTVsZPzNWYsm', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'GLUB GLUB', NULL, '$2y$10$203DE4HrXNNTLeUMDGXPneM3Y6jy.msI71WfLq6FJEUhOomqISyn2', NULL, 'Rua Bento Soares Mota', NULL, '08412180', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP', NULL, NULL),
-(7, 'WALTER HARTWELL WHITE', NULL, '$2y$10$uG.KbtZlrr.xjjRxHtfXF.aJvj8DxvJb7ZZ6j7/evBXgHlKYiubFa', NULL, 'Rua João Franco', NULL, '12906000', 'Jardim São Cristóvão', 'Bragança Paulista', 'SP', NULL, '2025-09-14 13:48:09'),
-(8, 'TYLER JOSEPH', NULL, '$2y$10$wbwmtH2hfr/ZnLbuCdq8Be81yRw1ztv6k6M.7YK11KytmqaD56/1C', NULL, 'Rua Bento Soares Mota', NULL, '08412180', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP', NULL, '2025-09-14 14:27:05'),
-(9, 'JOSH DUN', NULL, '$2y$10$XZHMEjVdL4CsOFvgCA/B7.CziloKODlTBpbiJgB36AO0bJSTJXjJ2', NULL, 'Rua Bento Soares Mota', NULL, '08412180', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP', NULL, '2025-09-14 14:29:16'),
-(10, 'TESTE TESTE DA SILVA', NULL, '$2y$10$.dNN2A/2LOKT3/UhrAWa2eXUcspsqsS09Wp5OLwgVCd6LebDiFS3q', NULL, '', NULL, '', '', '', '', NULL, '2025-09-14 15:32:44'),
-(11, 'OUTRO TESTE SANTOS', NULL, '$2y$10$1ueGOAMRSYF88CImSb8fx.dzVmfzoPs7S5fdz9OfLoJAU1Uq6GN36', NULL, 'Rua Bento Soares Mota', NULL, '08412180', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP', NULL, '2025-09-14 15:34:08');
-*/
+
 -- --------------------------------------------------------
 
 --
@@ -159,16 +142,12 @@ CREATE TABLE `tb_direcao_filme` (
   `nome_diretor_filme` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estrutura para tabela `tb_distribuidora`
+-- Despejando dados para a tabela `tb_direcao_filme`
 --
 
-CREATE TABLE `tb_distribuidora` (
-  `id_distribuidora` int(11) NOT NULL,
-  `nome_distribuidora` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `tb_direcao_filme` (`id_filme`, `nome_diretor_filme`) VALUES
+(1, 'Michael Chaves');
 
 -- --------------------------------------------------------
 
@@ -177,10 +156,16 @@ CREATE TABLE `tb_distribuidora` (
 --
 
 CREATE TABLE `tb_distribuidora_filme` (
-  `id_distribuidora_filme` int(11) NOT NULL,
   `id_filme` int(11) DEFAULT NULL,
-  `id_distribuidora` int(11) DEFAULT NULL
+  `nome_distribuidora` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_distribuidora_filme`
+--
+
+INSERT INTO `tb_distribuidora_filme` (`id_filme`, `nome_distribuidora`) VALUES
+(1, 'Warner Bros');
 
 -- --------------------------------------------------------
 
@@ -192,6 +177,15 @@ CREATE TABLE `tb_elenco_filme` (
   `id_filme` int(11) DEFAULT NULL,
   `nome_ator_filme` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_elenco_filme`
+--
+
+INSERT INTO `tb_elenco_filme` (`id_filme`, `nome_ator_filme`) VALUES
+(1, 'Vera Farmiga'),
+(1, 'Patrick Wilson'),
+(1, 'Mia Tomlinson');
 
 -- --------------------------------------------------------
 
@@ -208,20 +202,7 @@ CREATE TABLE `tb_email_cliente` (
 --
 -- Despejando dados para a tabela `tb_email_cliente`
 --
-/*
-INSERT INTO `tb_email_cliente` (`id_email_cliente`, `id_cliente`, `email_cliente`) VALUES
-(1, 1, 'teste@gmail.com'),
-(2, 2, 'aura@gmail.com'),
-(3, 3, 'testeeee@gmail.com'),
-(4, 4, 'trovadorismo@gmail.com'),
-(5, 5, 'autismo@gmail.com'),
-(6, 6, 'exemplo2@gmail.com'),
-(7, 7, '123@gmail.com'),
-(8, 8, 'clique@gmail.com'),
-(9, 9, 'american@gmail.com'),
-(10, 10, 'sdfjgfdhj@gmail.com'),
-(11, 11, '3456@gmail.com');
-*/
+
 -- --------------------------------------------------------
 
 --
@@ -244,13 +225,22 @@ CREATE TABLE `tb_filme` (
   `id_filme` int(11) NOT NULL,
   `nome_filme` varchar(80) DEFAULT NULL,
   `genero_filme` varchar(40) DEFAULT NULL,
-  `sinopse_filme` varchar(170) DEFAULT NULL,
-  `duracao_filme` varchar(8) DEFAULT NULL,
+  `sinopse_filme` varchar(350) DEFAULT NULL,
+  `duracao_filme` varchar(10) DEFAULT NULL,
   `capa_filme` varchar(350) DEFAULT NULL,
-  `classificacao_indicativa_filme` varchar(30) DEFAULT NULL,
+  `classificacao_indicativa_filme` int(11) DEFAULT NULL,
   `data_estreia_filme` date DEFAULT NULL,
-  `data_adicionado_filme` datetime DEFAULT NULL
+  `data_adicionado_filme` datetime DEFAULT current_timestamp(),
+  `link_trailer` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_filme`
+--
+
+INSERT INTO `tb_filme` (`id_filme`, `nome_filme`, `genero_filme`, `sinopse_filme`, `duracao_filme`, `capa_filme`, `classificacao_indicativa_filme`, `data_estreia_filme`, `data_adicionado_filme`, `link_trailer`) VALUES
+(1, 'Invocação do Mal 4: O último ritual', 'Terror', 'Os investigadores paranormais Ed e Lorraine Warren tentam banir um demônio da casa de uma família.', '2h 15min', NULL, 16, '2025-09-04', NULL, 'https://www.youtube.com/embed/n0sq-r0mBXQ'),
+(3, 'Undertale: O Filme', 'Romance, Comédia', 'Oi meu nome é Samara, tenho 14 anos (Teria se estivesse viva), morri aos 13 em Cascavel-PR. Eu andava de bicicleta Quando não pude desviar de um arame farpado. O pior foi que o dono do lote não quis me ajudar, riu bastante mim após agonizar por 2 horas enroscada no arame eu faleci, através dessa mensagem eu peço que façam com que eu possa descanç', '1h 40min', NULL, 18, '2025-11-30', '2025-09-19 19:56:50', 'https://www.youtube.com/embed/tXRcYP36U4U');
 
 -- --------------------------------------------------------
 
@@ -349,6 +339,16 @@ CREATE TABLE `tb_sala` (
   `capacidade_pessoas_sala` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tb_sala`
+--
+
+INSERT INTO `tb_sala` (`id_sala`, `nome_sala`, `capacidade_pessoas_sala`) VALUES
+(1, 'Tradicional', 100),
+(2, 'Tradicional', 150),
+(3, 'Tradicional', 100),
+(4, 'IMAX', 150);
+
 -- --------------------------------------------------------
 
 --
@@ -371,17 +371,31 @@ CREATE TABLE `tb_sessao` (
   `pais_sessao` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tb_sessao`
+--
+
+INSERT INTO `tb_sessao` (`id_sessao`, `id_filme`, `id_sala`, `tipo_audio_sessao`, `data_sessao`, `horario_sessao`, `logradouro_sessao`, `complemento_sessao`, `cep_sessao`, `bairro_sessao`, `cidade_sessao`, `estado_sessao`, `pais_sessao`) VALUES
+(2, 1, 3, 'Dublado', '2025-09-15', '18:00:00', 'Rua Morango do Amor', NULL, '91919191', 'Labubu', 'São Paulo', 'SP', 'Brasil');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tb_tag_sala`
+-- Estrutura para tabela `tb_tag_filme`
 --
 
-CREATE TABLE `tb_tag_sala` (
-  `id_tag_sala` int(11) NOT NULL,
-  `id_sala` int(11) DEFAULT NULL,
+CREATE TABLE `tb_tag_filme` (
+  `id_tag_filme` int(11) NOT NULL,
+  `id_filme` int(11) DEFAULT NULL,
   `nome_tag_sala` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_tag_filme`
+--
+
+INSERT INTO `tb_tag_filme` (`id_tag_filme`, `id_filme`, `nome_tag_sala`) VALUES
+(1, 3, 'PRÉ-VENDA');
 
 -- --------------------------------------------------------
 
@@ -405,31 +419,6 @@ CREATE TABLE `tb_tel_funcionario` (
   `id_tel_funcionario` int(11) NOT NULL,
   `id_funcionario` int(11) DEFAULT NULL,
   `tel_funcionario` char(14) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tb_tipo_sala`
---
-
-CREATE TABLE `tb_tipo_sala` (
-  `id_tipo_sala` int(11) NOT NULL,
-  `id_sala` int(11) DEFAULT NULL,
-  `tipo_sala` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tb_trailer_filme`
---
-
-CREATE TABLE `tb_trailer_filme` (
-  `id_trailer` int(11) NOT NULL,
-  `id_filme` int(11) DEFAULT NULL,
-  `link_trailer` varchar(300) DEFAULT NULL,
-  `duracao_trailer` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -496,18 +485,10 @@ ALTER TABLE `tb_direcao_filme`
   ADD KEY `id_filme` (`id_filme`);
 
 --
--- Índices de tabela `tb_distribuidora`
---
-ALTER TABLE `tb_distribuidora`
-  ADD PRIMARY KEY (`id_distribuidora`);
-
---
 -- Índices de tabela `tb_distribuidora_filme`
 --
 ALTER TABLE `tb_distribuidora_filme`
-  ADD PRIMARY KEY (`id_distribuidora_filme`),
-  ADD KEY `id_filme` (`id_filme`),
-  ADD KEY `id_distribuidora` (`id_distribuidora`);
+  ADD KEY `tb_distribuidora_filme_ibfk_1` (`id_filme`);
 
 --
 -- Índices de tabela `tb_elenco_filme`
@@ -591,11 +572,11 @@ ALTER TABLE `tb_sessao`
   ADD KEY `id_sala` (`id_sala`);
 
 --
--- Índices de tabela `tb_tag_sala`
+-- Índices de tabela `tb_tag_filme`
 --
-ALTER TABLE `tb_tag_sala`
-  ADD PRIMARY KEY (`id_tag_sala`),
-  ADD KEY `id_sala` (`id_sala`);
+ALTER TABLE `tb_tag_filme`
+  ADD PRIMARY KEY (`id_tag_filme`),
+  ADD KEY `id_sala` (`id_filme`);
 
 --
 -- Índices de tabela `tb_tel_cliente`
@@ -610,20 +591,6 @@ ALTER TABLE `tb_tel_cliente`
 ALTER TABLE `tb_tel_funcionario`
   ADD PRIMARY KEY (`id_tel_funcionario`),
   ADD KEY `id_funcionario` (`id_funcionario`);
-
---
--- Índices de tabela `tb_tipo_sala`
---
-ALTER TABLE `tb_tipo_sala`
-  ADD PRIMARY KEY (`id_tipo_sala`),
-  ADD KEY `id_sala` (`id_sala`);
-
---
--- Índices de tabela `tb_trailer_filme`
---
-ALTER TABLE `tb_trailer_filme`
-  ADD PRIMARY KEY (`id_trailer`),
-  ADD KEY `id_filme` (`id_filme`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -663,7 +630,7 @@ ALTER TABLE `tb_caracteristica_assento_ingresso`
 -- AUTO_INCREMENT de tabela `tb_cliente`
 --
 ALTER TABLE `tb_cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `tb_desconto`
@@ -678,22 +645,10 @@ ALTER TABLE `tb_desconto_ingresso`
   MODIFY `id_desconto_ingresso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_distribuidora`
---
-ALTER TABLE `tb_distribuidora`
-  MODIFY `id_distribuidora` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tb_distribuidora_filme`
---
-ALTER TABLE `tb_distribuidora_filme`
-  MODIFY `id_distribuidora_filme` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tb_email_cliente`
 --
 ALTER TABLE `tb_email_cliente`
-  MODIFY `id_email_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_email_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `tb_email_funcionario`
@@ -705,7 +660,7 @@ ALTER TABLE `tb_email_funcionario`
 -- AUTO_INCREMENT de tabela `tb_filme`
 --
 ALTER TABLE `tb_filme`
-  MODIFY `id_filme` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_filme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_funcao`
@@ -741,19 +696,19 @@ ALTER TABLE `tb_metodo_pagamento_ingresso`
 -- AUTO_INCREMENT de tabela `tb_sala`
 --
 ALTER TABLE `tb_sala`
-  MODIFY `id_sala` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tb_sessao`
 --
 ALTER TABLE `tb_sessao`
-  MODIFY `id_sessao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sessao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `tb_tag_sala`
+-- AUTO_INCREMENT de tabela `tb_tag_filme`
 --
-ALTER TABLE `tb_tag_sala`
-  MODIFY `id_tag_sala` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tb_tag_filme`
+  MODIFY `id_tag_filme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tb_tel_cliente`
@@ -766,18 +721,6 @@ ALTER TABLE `tb_tel_cliente`
 --
 ALTER TABLE `tb_tel_funcionario`
   MODIFY `id_tel_funcionario` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tb_tipo_sala`
---
-ALTER TABLE `tb_tipo_sala`
-  MODIFY `id_tipo_sala` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tb_trailer_filme`
---
-ALTER TABLE `tb_trailer_filme`
-  MODIFY `id_trailer` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para tabelas despejadas
@@ -812,8 +755,7 @@ ALTER TABLE `tb_direcao_filme`
 -- Restrições para tabelas `tb_distribuidora_filme`
 --
 ALTER TABLE `tb_distribuidora_filme`
-  ADD CONSTRAINT `tb_distribuidora_filme_ibfk_1` FOREIGN KEY (`id_filme`) REFERENCES `tb_filme` (`id_filme`),
-  ADD CONSTRAINT `tb_distribuidora_filme_ibfk_2` FOREIGN KEY (`id_distribuidora`) REFERENCES `tb_distribuidora` (`id_distribuidora`);
+  ADD CONSTRAINT `tb_distribuidora_filme_ibfk_1` FOREIGN KEY (`id_filme`) REFERENCES `tb_filme` (`id_filme`);
 
 --
 -- Restrições para tabelas `tb_elenco_filme`
@@ -861,10 +803,10 @@ ALTER TABLE `tb_sessao`
   ADD CONSTRAINT `tb_sessao_ibfk_2` FOREIGN KEY (`id_sala`) REFERENCES `tb_sala` (`id_sala`);
 
 --
--- Restrições para tabelas `tb_tag_sala`
+-- Restrições para tabelas `tb_tag_filme`
 --
-ALTER TABLE `tb_tag_sala`
-  ADD CONSTRAINT `tb_tag_sala_ibfk_1` FOREIGN KEY (`id_sala`) REFERENCES `tb_sala` (`id_sala`);
+ALTER TABLE `tb_tag_filme`
+  ADD CONSTRAINT `tb_tag_filme_ibfk_1` FOREIGN KEY (`id_filme`) REFERENCES `tb_filme` (`id_filme`);
 
 --
 -- Restrições para tabelas `tb_tel_cliente`
@@ -877,18 +819,6 @@ ALTER TABLE `tb_tel_cliente`
 --
 ALTER TABLE `tb_tel_funcionario`
   ADD CONSTRAINT `tb_tel_funcionario_ibfk_1` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario` (`id_funcionario`);
-
---
--- Restrições para tabelas `tb_tipo_sala`
---
-ALTER TABLE `tb_tipo_sala`
-  ADD CONSTRAINT `tb_tipo_sala_ibfk_1` FOREIGN KEY (`id_sala`) REFERENCES `tb_sala` (`id_sala`);
-
---
--- Restrições para tabelas `tb_trailer_filme`
---
-ALTER TABLE `tb_trailer_filme`
-  ADD CONSTRAINT `tb_trailer_filme_ibfk_1` FOREIGN KEY (`id_filme`) REFERENCES `tb_filme` (`id_filme`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

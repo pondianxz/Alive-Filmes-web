@@ -173,7 +173,7 @@
             <input type="text" name="nomeContato" placeholder="Nome">
             <input type="email" name="emailContato" id="">
             <textarea name="msgContato" id=""></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" name="btn_contato">Enviar</button>
         </form>
     </section>
     
@@ -293,3 +293,12 @@
     </div>
     <script src="js/script.js"></script>
 </body>
+<?php
+
+    if(isset($_POST["btn_contato"])){
+
+        
+
+    }
+
+?>
