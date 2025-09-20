@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS bdalivefilmes;
+CREATE DATABASE bdalivefilmes;
+USE bdalivefilmes;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
