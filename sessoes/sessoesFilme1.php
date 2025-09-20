@@ -163,14 +163,6 @@
                         ?></p>
 
 
-                        <!-- Script para tirar a ultima virgula das informações caso haja uma extra -->
-                        <script>
-                            const infosFilme = document.querySelectorAll('.infosFilme');
-                            infosFilme.forEach((isso) => {
-                                isso.textContent = isso.textContent.slice(0, isso.textContent.lastIndexOf(", "));
-                            })
-                        </script>
-
 
                         <p class="infosFilme"><span>Distribuidora: </span><?php
                             try {
@@ -230,8 +222,18 @@
     </section>
 
 
+    
     <?php include("../recursos/footer.php") ?>
 
-    
+
+
+    <!-- Script para tirar a ultima virgula das informações dos filmes caso haja uma no final -->
+    <script>
+        infosFilme.forEach((el) => {
+            if(el.textContent.endsWith(", ")){
+                el.textContent = el.textContent.slice(0, el.textContent.lastIndexOf(", "));
+            }
+        })
+    </script>
     <script src="../js/script.js"></script>
 </body>
